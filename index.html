@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AttendChain — Blockchain Attendance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CONNECT SCREEN -->
+  <div id="connectScreen" class="connect-screen">
+    <div class="connect-card">
+      <div class="connect-logo">
+        <div class="logo-icon">
+          <svg width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Graduation cap -->
+            <polygon points="32,8 58,20 32,32 6,20" fill="#38bdf8"/>
+            <!-- Cap brim stem -->
+            <rect x="28" y="31" width="8" height="14" rx="2" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+            <!-- Tassel cord -->
+            <line x1="58" y1="20" x2="58" y2="36" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="58" cy="39" r="4" fill="#7dd3fc"/>
+            <!-- Chain links -->
+            <ellipse cx="10" cy="44" rx="10" ry="6" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <ellipse cx="24" cy="44" rx="10" ry="6" fill="none" stroke="#7dd3fc" stroke-width="3"/>
+            <ellipse cx="38" cy="44" rx="10" ry="6" fill="none" stroke="#38bdf8" stroke-width="3"/>
+          </svg>
+        </div>
+        <h1>AttendChain</h1>
+        <p>Blockchain Student Attendance System</p>
+      </div>
+      <button id="connectBtn" class="btn-connect">
+        <span class="btn-icon">🦊</span> Connect MetaMask
+      </button>
+      <div id="connectStatus" class="connect-status"></div>
+      <div class="connect-footer">Powered by Sepolia Testnet · Ethers.js v5</div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:6px;">
+            <polygon points="32,8 58,20 32,32 6,20" fill="#38bdf8"/>
+            <rect x="28" y="31" width="8" height="12" rx="2" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="58" y1="20" x2="58" y2="34" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="58" cy="37" r="4" fill="#7dd3fc"/>
+            <ellipse cx="10" cy="48" rx="10" ry="6" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <ellipse cx="24" cy="48" rx="10" ry="6" fill="none" stroke="#7dd3fc" stroke-width="3"/>
+            <ellipse cx="38" cy="48" rx="10" ry="6" fill="none" stroke="#38bdf8" stroke-width="3"/>
+          </svg>AttendChain</div>
+        <div class="sidebar-role" id="sidebarRole"></div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <!-- filled by JS -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="wallet-chip">
+          <span class="wallet-dot"></span>
+          <span id="walletShort"></span>
+        </div>
+        <button class="btn-disconnect" id="disconnectBtn">Disconnect</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="topbar">
+        <button class="hamburger" id="hamburger">☰</button>
+        <h2 class="page-title" id="pageTitle">Dashboard</h2>
+      </div>
+
+      <div class="page-area" id="pageArea">
+        <!-- pages rendered by JS -->
+      </div>
+    </main>
+
+  </div>
+
+  <script src="https://unpkg.com/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
